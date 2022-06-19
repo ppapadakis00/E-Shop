@@ -1,0 +1,937 @@
+body{
+    margin: 0;
+    background-color: rgb(255, 255, 255);
+}
+
+.header{
+    background-color: rgb(57, 55, 83);
+    display: flex;
+    align-items: baseline;
+    padding: 0.8rem;
+    gap: 1rem;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.3);
+    width: 85%;
+    margin: auto;
+    margin-top: 3rem;
+}
+
+.Title{
+    position: relative;
+    font-size: 3rem;
+    font-weight: 700;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    left: 50px;
+    color: rgb(0, 174, 255);
+    text-shadow: 1px 2px #2600ff;
+    white-space: nowrap;
+}
+
+.links{
+    border-style: none;
+    background:none;
+    font-size: 1rem;
+    color: white;
+    padding: 0%;
+    cursor: pointer;
+    transition: font-size 150ms;
+    text-decoration: none;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.dropdown-header{
+    position: relative;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: rgb(255, 255, 255);
+    border-style: none;
+    background:none;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+    margin: 0;
+    margin-right: auto;
+    transition: color 150ms ease-in-out;
+}
+
+.dropdown-header:hover{
+    color: rgb(211, 210, 255);
+}
+
+.dropdown.active > .links , .links:hover{
+    color: rgb(230, 255, 142);
+    font-size: 1.5rem;
+}
+
+.dropdown{
+    position: relative;
+}
+
+.dropdown-menu{
+    z-index: 1;
+    position: absolute;
+    left: 0;
+    top: calc(100% + .25rem);
+    background-color: rgb(57, 55, 83);
+    padding: 0.7rem;
+    border-radius: 0.2rem;
+    box-shadow: 0px 2px 5px 0px rgba(0,0,0,.5);
+    opacity: 0;
+    transform: translateY(-15px);
+    pointer-events: none;
+    transition: opacity 150ms ease-in-out ,transform 150ms ease-in-out;
+}
+
+
+.dropdown.active > .links + .dropdown-menu{
+    opacity: 1;
+    transform: translateY(0px);
+    pointer-events: auto;
+}
+
+.InsideLinks{
+    position: relative;
+    border-style: none;
+    background:none;
+    font-size: 1.15rem;
+    color: rgb(163, 163, 163);
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-decoration: none;
+    padding: 0;
+    cursor: pointer;
+    margin: 0;
+    margin-right: auto;
+}
+.InsideLinks:hover{
+    color: black;
+}
+
+.grid-content{
+    display: grid;
+    grid-template-columns: repeat(2,max-content);
+    gap: 2rem;  
+}
+
+.dropdown-links{
+    display: flex;
+    flex-direction: column;
+}
+
+.formLogin > input,button{
+    margin-bottom: .5rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    border-color: rgb(99, 99, 99);
+}
+
+.labels{
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: rgb(255, 255, 255);
+}
+
+.cart-button{
+    position: relative;
+    right: 0;
+}
+
+.TextLabels{
+    color: rgb(177, 255, 104);
+    font-size: 1rem;
+}
+
+.Logout-Button{
+    color: rgb(255, 104, 104);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: font-size 150ms ease-in-out;
+}
+
+.Logout-Button:hover{
+    color: rgb(255, 0, 0);
+    font-size: 1.5rem;
+}
+
+.InfoUpPage{
+    position: relative;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.phone{
+    position: relative;
+    display: flex;
+    right: 50px;
+    font-size: 2.5rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    white-space: nowrap;
+    color: rgb(48, 48, 48);
+}
+
+.CartImage{
+    width: 40px;
+    height: 40px;
+    background: none;
+}
+
+.CartBackground{
+    position: relative;
+    width: fit-content;
+    background:none;
+    right: 12%;
+    margin-top: auto;
+    margin-bottom: auto;
+    height:40px;
+    border-radius: 15px;
+    padding: 0px 1px;
+    outline: none;
+    border: none;
+    transition: background-color 150ms ease-in-out,transform 150ms ease-in-out;
+    cursor: pointer;
+}
+
+.CartBackground:hover{
+    background-color: #acacac;
+    transform: scale(1.2);
+}
+
+.Cartbutton-text{
+    position: absolute;
+    font-size: 1.25rem;
+    color: #000000;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif ;
+    white-space: nowrap;
+    padding-left: 10px;
+    top: 15%;
+}
+
+.PhoneImage{
+    position: relative;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+}
+
+.PageStart{
+    position: relative;
+    top: 20px;
+    width: 80%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 30px;
+}
+
+.PromoImages{
+    width: 70%;
+    height: auto;
+    margin: auto;
+}
+
+.NewPromo{
+    display: flex;
+    position: relative;
+    top: 20px;
+    width: 250pt;
+    height: 400pt;
+    border-radius: 5px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: rgba(0, 0, 0, 0.452);
+    box-shadow: 4px 4px 10px 0 rgba(0,0,0,0.5);
+    overflow: hidden;
+}
+
+.EshopIcon{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    top: 15px;
+}
+
+.newImage{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 55px;
+    height: 55px;
+}
+
+.PromoDescrip{
+    bottom: -20px;
+    position: absolute;
+    width: 100%;
+    height: 15%;
+    text-align: center;
+    justify-content: center;
+    background-color: rgb(236, 236, 236);
+    font-weight: 700;
+    font-size:19px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    padding-top: 20px;
+}
+
+.PriceTagNewPromo{
+    position: relative;
+    bottom: -2px;
+    width: 1rem;
+    height: 1rem;
+    margin: auto;
+}
+
+.NewPromoInfo{
+    position: absolute;
+    width: 100%;
+    bottom: 2;
+    display: flex;
+}
+
+.NewPromoInfoInside{
+    margin: auto;
+}
+
+.ProductsBody{
+    position: relative;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 20px;
+    margin: auto;
+}
+
+.ProductInfo{
+    display: flex;
+}
+
+.Line{
+    position: relative;
+    top: 20px;
+    width: 100%;
+    height: 5px;
+    background-color: #acacac;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+}
+
+.ProductDescrip{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 20px;
+    width: 40%;
+    font-weight: 500;
+    font-size:20px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #3a3a3a;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.infoBox{
+
+    width: 22%;
+    height: 100%;
+    border-width: 2px;
+    white-space: nowrap;
+    display: flex;
+}
+
+.Info{
+    width: auto;
+    height: 100%;
+    padding: 10px 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #4e4e4e69;
+}
+.InfoTitle{
+    width: auto;
+    height: 100%;
+    padding: 10px 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #000000;
+}
+
+.AddCartButton{
+    position: relative;
+    font-weight: 500;
+    font-size:20px;
+    margin: 0;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #000000;
+    right: 20px;
+    border-radius: 2px;
+    border-style: none;
+    padding: 2px 5px;
+    background-color: #71b4ff;
+    box-shadow: 2px 5px 5px 0px rgba(0, 0, 0, 0.5);
+    display: flex;
+    transition: transform 150ms ease-in-out,color 150ms ease-in-out;
+    cursor: pointer;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.AddCartButton:hover{
+    background-color: #02d9ff;
+    transform: scale(1.2);
+}
+
+.addCartForm{
+    position: relative;
+    margin: 0;
+    margin-left: auto;
+    margin-top: auto;
+}
+
+.AddCartImage{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    pointer-events: none;
+}
+
+.AddCartText{
+    position: relative;
+    margin: auto;
+    pointer-events: none;
+}
+
+.AddInfoImage{
+    position: relative;
+    background-image: url("../Images/AddInfo.png");
+    background-color:  rgba(255, 255, 255, 1);
+    background-repeat: no-repeat;
+    background-size: 105%;
+    background-position: center;
+    background-blend-mode: multiply;
+    width: 50px;
+    height: 50px;
+    margin: auto;
+    border-radius: 50%;
+    transition: background-color 150ms ease-in-out;
+}
+
+
+.AddInfoText{
+    position: relative;
+}
+
+.AddInfo{
+    background: none;
+    border-style: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 3pt;
+    width: fit-content;
+    margin-top: 10pt;
+    cursor: pointer;
+    transition: transform 150ms ease-in-out;
+}
+
+.AddInfo:hover{
+    transform: scale(1.2);
+}
+
+.AddInfo:hover .AddInfoImage{
+    background-color: rgb(211, 211, 211);
+}
+
+.Fields{
+    padding-top: 20pt;
+}
+
+.AddField{
+    position: relative;
+    background-image: url("../Images/AddInfo.png");
+    background-size: 105%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    margin: auto;
+    transition: transform 150ms ease-in-out;
+}
+
+.AddField:hover{
+    background-color: #a5a5a5;
+    transform: scale(1.2);
+}
+
+.AddField::before{
+    position: absolute;
+    content: "";
+    width: 250%;
+    top: 50%;
+    left: -265%;
+    height: 1pt;
+    background-color: #000000;
+}
+.AddField::after{
+    position: absolute;
+    content: "";
+    width: 250%;
+    top: 50%;
+    left: 110%;
+    height: 1pt;
+    background-color: #000000;
+}
+
+.field{
+    display: flex;
+    padding-bottom: 10pt;
+}
+
+.inspectImage{
+    position: relative;
+    width: 30%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.buttonsDesign{
+    background-color: #71b4ff !important;
+    transition: background-color 150ms ease-in-out;
+    border-radius: 5px;
+    border-style: none;
+    cursor: pointer;
+    width: 80pt;
+    height: 25pt;
+    font-size: 15pt;
+    color: white;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.buttonsDesign:hover{
+    background-color: #a7d0ff !important;
+}
+
+.newProductLabel{
+    position: relative;
+    font-size: 20pt;
+}
+
+.insideProductLabel{
+    margin: auto;
+    width: fit-content;
+}
+
+.form-control{
+    border-radius: 5px;
+    border-color: #cdd8e2;
+    border-width: 1pt;
+    border-style: solid;
+    width: 80%;
+    height: 30pt;
+    font-size: 12.5pt;
+    padding-left: 10pt;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 10pt;
+}
+
+.dropdownForm{
+    margin: 0;
+}
+
+.cartBox{
+    position: relative;
+    width: 80%;
+    height: fit-content;
+    margin: auto;
+    top: 40pt;
+    border-radius: 2px;
+    border-style: solid;
+    border-color: #dfdfdf;
+    box-shadow: 2px 5px 6px 0px rgba(0, 0, 0, 0.5);
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.HeadersTable ,th,td{
+    border: 5px solid;
+}
+
+.HeadersTable{
+    background-color: #cfcfcf;
+    border-style: solid;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: #a5a5a5;
+}
+
+.HeadersTable th,.HeadersTable td{
+    background-color: rgb(0, 0, 0);
+    padding: 0px 10px;
+    border-style: none;
+}
+.HeadersTable th{
+    position: relative;
+    background-color: rgb(191, 142, 255);
+    padding: 20px 40px;
+    color: #ffffff;
+    text-align: center;
+}
+
+.HeadersTable td{
+    position: relative;
+    background-color: rgb(255, 255, 255);
+    padding: 20px 10px;
+    text-align: center;
+    font-weight: 500;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.CartProductsTable{
+    margin: auto;
+    padding: 25px 0;
+}
+
+.cartImageInspect{
+    width: 100px;
+    height: auto;
+}
+
+.Quantity form{
+    position: relative;
+    width: 18px;
+    height: 18px;
+
+}
+
+.QuantityCountChanger{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+    cursor: pointer;
+    background-color: #a3a3a3;
+    margin: 0;
+    padding-top: 2pt;
+}
+
+.Quantity p{
+    font-size: 18px;
+}
+
+.Quantity form , .Quantity p{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.Quantity form:first-of-type button{
+    color: rgb(255, 255, 255);
+}
+
+.Quantity form:last-of-type button{
+    color: rgb(255, 255, 255);
+}
+
+.Quantity form:first-of-type button:hover{
+    background-color: rgb(255, 157, 157) ;
+}
+
+.Quantity form:last-of-type button:hover{
+    background-color: rgb(157, 175, 255) ;
+}
+
+.InfoCart{
+    width: 80%;
+    height: 100%;
+    border-radius: 5px;
+    border-width: 2px;
+    box-shadow: 2px 5px 5px 0 rgba(0, 0, 0, 0.5);
+    border-style: solid;
+    border-color: #a5a5a5;
+    margin: auto;
+}
+
+.ProceedBuy{
+    position: relative;
+    background-image: url("../Images/continue.png");
+    width: 100px;
+    height: 50x;
+    font-size: 16px;
+    border-style: solid;
+    border-color: rgb(160, 160, 160);
+    background-position:right;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: rgb(167, 255, 196);
+    display: flex;
+    padding: 5px 5;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    color: rgb(0, 0, 0);
+    transition: background-color 150ms ease-in-out,border-color 150ms ease-in-out,transform 150ms ease-in-out;
+}
+
+.ProceedBuy:hover{
+    background-color: rgb(0, 255, 200);
+    border-color: rgb(192, 192, 192);
+    transform: scale(1.2);
+}
+
+.InfoCart{
+    border-style: none;
+    background-color: #d4d4d4;
+}
+
+.InfoCart th{
+    padding: 10px 5px;
+    text-align: center;
+    border-style: none;
+    background-color: white;
+}
+
+.InfoCart td{
+    padding: 20px 5px;
+    text-align: center;
+    background-color: white;
+    border-style: none;
+}
+
+.RemoveInfo{
+    position: relative;
+    background-image: url("../Images/remove.png");
+    width: 2px;
+    height: 2px;
+    font-size: 16px;
+    border-style: solid;
+    border-color: rgb(160, 160, 160);
+    background-position:center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: rgb(255, 212, 212);
+    padding: 15 15px;
+    margin-left: 10px;
+    margin-top: auto;
+    margin-bottom: auto;
+    transition: background-color 150ms ease-in-out,transform 150ms ease-in-out;
+    cursor: pointer;
+    
+}
+
+.RemoveInfo:hover{
+    background-color: #ff8585;
+    transform: scale(1.2);
+}
+
+.removeInfoMethod{
+    margin: auto;
+}
+
+.RemoveProduct{
+    position: relative;
+    background-image: url("../Images/remove.png");
+    width: 2px;
+    height: 2px;
+    font-size: 16px;
+    border-style: solid;
+    border-color: rgb(160, 160, 160);
+    background-position:center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    background-color: rgb(255, 212, 212);
+    padding: 15 15px;
+    transition: background-color 150ms ease-in-out,transform 150ms ease-in-out;
+    cursor: pointer;
+    
+}
+
+.RemoveProduct:hover{
+    background-color: #ff8585;
+    transform: scale(1.2);
+}
+
+.removeProductMethod{
+    position: absolute;
+}
+
+.LoginButton{
+    border-radius: 5px;
+    border-style: solid;
+    border-color: #c4c4c4;
+    background-color: #ffffff;
+    font-weight: 500;
+    font-size: 18px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: color 70ms ease-in-out, border-color 70ms ease-in-out, background-color 70ms ease-in-out,transform 150ms ease-in-out;
+}
+
+.LoginButton:hover{
+    background-color: rgb(0, 0, 0);
+    color: white;
+    border-color: #ffffff;
+    transform: scale(1.05);
+}
+
+.Counter{
+    position: absolute;
+    background-color: #02d9ff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding-bottom: 0;
+    color: white;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px 0 rgba(0, 0, 0, 0.3);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: auto;
+    left: -5px;
+    top: 25px;
+}
+
+.CounterText{
+    position: relative;
+    padding-bottom: 2px;
+}
+
+.AddCartResult{
+    position: fixed;
+    width: 25rem;
+    height: 10rem;
+    top: 50%;
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -250px;
+    background-color: #ffffff;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #000000;
+    /* overflow: hidden; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 150ms ease-in-out;
+    pointer-events: none;
+}
+
+.AddCartResult, .active{
+    pointer-events: auto;
+    opacity: 1;
+}
+
+.cartImageAdded{
+    position: relative;
+    width: 150px;
+    height: auto;
+}
+
+.cartImageAddedText{
+    position: relative;
+    width: 150px;
+    height: auto;
+    font-weight: 700;
+    font-family:'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+.ContinueAddedItem{
+    position: relative;
+    width: 100px;
+    height: 30px;
+    font-size: 16px;
+    border-style: solid;
+    border-color: rgb(206, 206, 206);
+    background-position:right;
+    background-size: 30px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    padding: 5px 5;
+    margin: auto;
+    margin-top: 70px;
+    margin-bottom: 25px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    color: rgb(255, 255, 255);
+    transition: background-color 150ms ease-in-out,border-color 150ms ease-in-out,transform 150ms ease-in-out;
+    margin-bottom: auto;
+}
+
+.ContinueAddedItem:hover{
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
+    color: black;
+    transform: scale(1.2);
+}
+
+.ContinueToCart{
+    position: relative;
+    width: 100px;
+    height: 25px;
+    font-size: 16px;
+    border-style: solid;
+    border-color: rgb(206, 206, 206);
+    background-position:right;
+    background-size: 30px;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    margin: auto;
+    margin-top: 70px;
+    text-decoration: none;
+    margin-bottom: 25px;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px 0px rgba(0, 0, 0, 0.3);
+    color: rgb(255, 255, 255);
+    transition: background-color 150ms ease-in-out,border-color 150ms ease-in-out,transform 150ms ease-in-out;
+    margin-bottom: auto;
+    font-weight: 500;
+    font-family:Arial, Helvetica, sans-serif;
+    padding: 0px 5px;
+    text-align: center;
+    border-radius: 5px;
+    border-width: 2px;
+    justify-content: center;
+    align-items: center;
+}
+
+.ContinueToCart:hover{
+    background-color: rgb(255, 255, 255);
+    border-color: rgb(0, 0, 0);
+    color: black;
+    transform: scale(1.2);
+}
+
+
+
+
+
